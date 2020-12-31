@@ -4,6 +4,7 @@ import 'package:stock_signature/components/drawer_menu.dart';
 import '../../utilities/constants/global_constants.dart';
 
 class Dashboard extends StatefulWidget {
+  static String id = 'Dashboard';
   @override
   _DashboardState createState() => _DashboardState();
 }

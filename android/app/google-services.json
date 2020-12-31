@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "919292680782",
+    "project_id": "stocksignature-51536",
+    "storage_bucket": "stocksignature-51536.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919292680782:android:ba86d3879aa4b529e6011f",
+        "android_client_info": {
+          "package_name": "com.vipulkm.stock_signature"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919292680782-6i3uks8sinmdg01m8t8jnns6dhc1uf4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBhm5HCOjmGxxTKIciWJmcb2YDkE5i0fQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919292680782-6i3uks8sinmdg01m8t8jnns6dhc1uf4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
