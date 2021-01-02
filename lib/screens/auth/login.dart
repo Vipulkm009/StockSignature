@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:stock_signature/components/rounded_button.dart';
 import 'package:stock_signature/screens/user/dashboard.dart';
 import 'package:stock_signature/utilities/constants/global_constants.dart';
+import 'package:stock_signature/services/auth_service.dart';
 
 class Login extends StatefulWidget {
   static String id = "LogIn";

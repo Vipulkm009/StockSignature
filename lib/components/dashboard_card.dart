@@ -38,12 +38,16 @@ class _DashboardCardState extends State<DashboardCard> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: Text(
-                  widget.title,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                  ),
+                child: Row(
+                  children: [
+                    Text(
+                      widget.title,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Row(
