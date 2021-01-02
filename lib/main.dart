@@ -4,8 +4,11 @@ import 'package:stock_signature/screens/auth/register.dart';
 import 'package:stock_signature/screens/static/welcome_screen.dart';
 import 'package:stock_signature/utilities/constants/global_constants.dart';
 import 'screens/user/dashboard.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   generateColors();
   runApp(StockSignature());
 }
