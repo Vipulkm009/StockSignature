@@ -1,7 +1,7 @@
 class SubCategory {
-  final String name;
-  final List<String> list;
-  final double sum;
+  String name;
+  List<String> list;
+  double sum;
 
   SubCategory(this.name, this.list, this.sum);
 }

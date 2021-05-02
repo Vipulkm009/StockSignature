@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stock_signature/components/app_body.dart';
 import 'package:stock_signature/components/rounded_button.dart';
 import 'package:stock_signature/screens/auth/login.dart';
 import 'package:stock_signature/screens/auth/register.dart';
@@ -12,7 +13,7 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreen extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppBody(
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

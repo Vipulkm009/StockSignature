@@ -1,9 +1,11 @@
 import 'dart:math';
-
 import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:stock_signature/screens/user/customer_screen.dart';
+import 'package:stock_signature/screens/user/product_screen.dart';
+import 'package:stock_signature/screens/user/report_screen.dart';
+import 'package:stock_signature/screens/user/vendor_screen.dart';
 import 'package:stock_signature/utilities/classes/category.dart';
 import 'package:stock_signature/utilities/classes/subcategory.dart';
 
@@ -129,3 +131,11 @@ const kTextInputDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(32.0)),
   ),
 );
+
+// var currentIndex = 0;
+// final List<Widget> children = [
+//   ProductScreen(),
+//   CustomerScreen(),
+//   VendorScreen(),
+//   ReportScreen(),
+// ];
