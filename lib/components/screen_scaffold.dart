@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:stock_signature/components/drawer_menu.dart';
+import 'package:stock_signature/screens/user/customer_screen.dart';
+import 'package:stock_signature/screens/user/dashboard.dart';
+import 'package:stock_signature/screens/user/product_screen.dart';
+import 'package:stock_signature/screens/user/report_screen.dart';
+import 'package:stock_signature/screens/user/vendor_screen.dart';
+import 'package:stock_signature/utilities/classes/app_state_notifiers.dart';
 import 'package:stock_signature/utilities/constants/global_constants.dart';
-
-import 'user/customer_screen.dart';
-import 'user/dashboard.dart';
-import 'user/product_screen.dart';
-import 'user/report_screen.dart';
-import 'user/vendor_screen.dart';
 
 class ScreenScaffold extends StatefulWidget {
   static String id = 'ScreenScaffold';
@@ -30,10 +31,19 @@ class _ScreenScaffoldState extends State<ScreenScaffold> {
       appBar: AppBar(
         title: Text('Stock Signature'),
         elevation: 12.0,
+        actions: <Widget>[
+          Switch(
+            value: Provider.of<AppStateNotifier>(context).isDarkMode,
+            onChanged: (boolVal) {
+              Provider.of<AppStateNotifier>(context).updateTheme(boolVal);
+            },
+          ),
+        ],
       ),
       drawer: DrawerMenu(),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blueGrey[900],
         onTap: onTapped,
         currentIndex: _currentIndex,
         items: [
@@ -65,12 +75,6 @@ class _ScreenScaffoldState extends State<ScreenScaffold> {
   void onTapped(int index) {
     setState(() {
       _currentIndex = index;
-    });
-  }
-
-  void onPressing() {
-    setState(() {
-      _currentIndex = 4;
     });
   }
 }

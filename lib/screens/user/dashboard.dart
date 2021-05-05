@@ -68,21 +68,19 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
           ),
-          SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                DashboardCard(
-                  title: 'Product',
-                  list: kCategoryList,
-                ),
-                DashboardCard(
-                  title: 'Sub-Categories',
-                  list: kCategoryList[0].list,
-                ),
-              ],
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              DashboardCard(
+                title: 'Product',
+                list: kCategoryList,
+              ),
+              DashboardCard(
+                title: 'Sub-Categories',
+                list: kCategoryList[0].list,
+              ),
+            ],
           ),
         ],
       ),

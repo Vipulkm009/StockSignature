@@ -29,7 +29,7 @@ class _DashboardCardState extends State<DashboardCard> {
         vertical: 8.0,
       ),
       child: Card(
-        color: Colors.black,
+        color: Theme.of(context).cardTheme.color,
         elevation: 8.0,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -42,10 +42,7 @@ class _DashboardCardState extends State<DashboardCard> {
                   children: [
                     Text(
                       widget.title,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: Theme.of(context).textTheme.title,
                     ),
                   ],
                 ),
