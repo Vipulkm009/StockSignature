@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stock_signature/screens/auth/login.dart';
 import 'package:stock_signature/screens/auth/register.dart';
+import 'package:stock_signature/screens/screen_scaffold.dart';
 import 'package:stock_signature/screens/static/welcome_screen.dart';
 import 'package:stock_signature/screens/user/add_product.dart';
 import 'package:stock_signature/utilities/constants/global_constants.dart';
@@ -19,9 +20,10 @@ class StockSignature extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: Dashboard(),
-      initialRoute: WelcomeScreen.id,
+      home: ScreenScaffold(),
+      initialRoute: ScreenScaffold.id,
       routes: {
+        ScreenScaffold.id: (context) => ScreenScaffold(),
         Dashboard.id: (context) => Dashboard(),
         WelcomeScreen.id: (context) => WelcomeScreen(),
         Login.id: (context) => Login(),

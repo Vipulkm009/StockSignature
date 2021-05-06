@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:stock_signature/components/app_body.dart';
 import 'package:stock_signature/components/rounded_button.dart';
 import 'package:stock_signature/utilities/constants/global_constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -17,7 +18,7 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppBody(
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

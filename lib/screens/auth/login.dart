@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:stock_signature/components/app_body.dart';
 import 'package:stock_signature/components/rounded_button.dart';
 import 'package:stock_signature/screens/user/dashboard.dart';
 import 'package:stock_signature/utilities/constants/global_constants.dart';
@@ -17,7 +18,7 @@ class _LoginState extends State<Login> {
   String password;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppBody(
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -70,6 +71,7 @@ class _LoginState extends State<Login> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomAppBar(),
     );
   }
 }

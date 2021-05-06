@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stock_signature/components/app_body.dart';
 import 'package:stock_signature/components/drawer_menu.dart';
 import 'package:stock_signature/components/rounded_button.dart';
 import 'package:stock_signature/utilities/classes/category.dart';
@@ -26,15 +27,15 @@ class _AddPurchaseState extends State<AddPurchase> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomPadding: true,
-        appBar: AppBar(
-          title: Text('Stock Signature'),
-          elevation: 12.0,
-        ),
-        drawer: DrawerMenu(),
-        body: SingleChildScrollView(
+    return AppBody(
+      resizeToAvoidBottomPadding: true,
+      appBar: AppBar(
+        title: Text('Stock Signature'),
+        elevation: 12.0,
+      ),
+      drawer: DrawerMenu(),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
