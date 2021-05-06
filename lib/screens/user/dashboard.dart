@@ -12,8 +12,7 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   final _auth = FirebaseAuth.instance;
-  // ignore: deprecated_member_use
-  FirebaseUser loggedInUser;
+  User loggedInUser;
 
   @override
   void initState() {
@@ -26,6 +25,7 @@ class _DashboardState extends State<Dashboard> {
       final user = _auth.currentUser;
       if (user != null) {
         loggedInUser = user;
+        print('----' + loggedInUser.email + '----');
       }
     } catch (e) {
       print(e);
@@ -39,9 +39,7 @@ class _DashboardState extends State<Dashboard> {
         title: Text('Stock Signature'),
         elevation: 12.0,
       ),
-      drawer: DrawerMenu(
-        loggedInUser: loggedInUser,
-      ),
+      drawer: DrawerMenu(),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
