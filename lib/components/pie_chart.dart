@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:stock_signature/utilities/constants/global_constants.dart';
 

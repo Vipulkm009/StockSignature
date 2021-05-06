@@ -35,7 +35,7 @@ class _ScreenScaffoldState extends State<ScreenScaffold> {
         // ),
         title: Text(
           'Stock Signature',
-          style: Theme.of(context).textTheme.title,
+          style: Theme.of(context).appBarTheme.textTheme.title,
         ),
         elevation: 12.0,
         actions: <Widget>[
@@ -49,8 +49,12 @@ class _ScreenScaffoldState extends State<ScreenScaffold> {
       ),
       drawer: DrawerMenu(),
       body: _children[_currentIndex],
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.add,
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blueGrey[900],
         onTap: onTapped,
         currentIndex: _currentIndex,
         items: [
@@ -71,7 +75,7 @@ class _ScreenScaffoldState extends State<ScreenScaffold> {
             title: Text('Vendors'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.report),
+            icon: Icon(Icons.file_present),
             title: Text('Reports'),
           ),
         ],

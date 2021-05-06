@@ -90,6 +90,7 @@ class _PieChartList extends State<PieChartList> {
             child: Text(
               widget.text,
               overflow: TextOverflow.visible,
+              style: Theme.of(context).textTheme.display1,
             ),
           ),
         ],

@@ -67,7 +67,6 @@ class _DashboardState extends State<Dashboard> {
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
               border: Border.symmetric(
                 horizontal: BorderSide(
                   width: 1.0,
@@ -78,9 +77,7 @@ class _DashboardState extends State<Dashboard> {
               padding: const EdgeInsets.all(5.0),
               child: Text(
                 'Dashboard>',
-                style: TextStyle(
-                  fontSize: 18,
-                ),
+                style: Theme.of(context).textTheme.subtitle,
               ),
             ),
           ),

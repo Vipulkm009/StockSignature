@@ -28,42 +28,51 @@ class _DashboardCardState extends State<DashboardCard> {
         horizontal: 16.0,
         vertical: 8.0,
       ),
-      child: Container(
-        // height: 300.0,
-        child: Card(
-          color: Theme.of(context).cardTheme.color,
-          elevation: 8.0,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Row(
-                    children: [
-                      Text(
-                        widget.title,
-                        style: Theme.of(context).textTheme.subtitle,
-                      ),
-                    ],
-                  ),
-                ),
-                Row(
-                  children: <Widget>[
-                    ListRow(
-                      list: getList(widget.list),
-                    ),
-                    PieChartView(
-                      list: widget.list,
+      child: Card(
+        color: Theme.of(context).cardTheme.color,
+        elevation: 4.0,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Card(
+              color: Theme.of(context).cardTheme.color,
+              elevation: 2.0,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Text(
+                      widget.title,
+                      style: Theme.of(context).textTheme.subtitle,
                     ),
                   ],
-                )
-              ],
+                ),
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(12.0),
+                  topRight: Radius.circular(12.0),
+                ),
+              ),
             ),
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(12.0)),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                children: <Widget>[
+                  ListRow(
+                    list: getList(widget.list),
+                  ),
+                  PieChartView(
+                    list: widget.list,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(12.0),
           ),
         ),
       ),
