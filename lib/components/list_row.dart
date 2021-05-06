@@ -13,22 +13,47 @@ class ListRow extends StatefulWidget {
 }
 
 class _ListRowState extends State<ListRow> {
+  List<PieChartList> pieChartList = [];
+
+  void computeList() {
+    pieChartList.clear();
+    for (var element in widget.list) {
+      pieChartList.add(PieChartList(
+        text: element,
+        index: widget.list.indexOf(element),
+      ));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    computeList();
     return Expanded(
       flex: 3,
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            for (var element in widget.list)
-              PieChartList(
-                text: element,
-                index: widget.list.indexOf(element),
-              )
-          ],
+      child: Container(
+        height: 200.0,
+        child: Expanded(
+          child: ListView.builder(
+            itemCount: pieChartList.length,
+            scrollDirection: Axis.vertical,
+            itemBuilder: (BuildContext context, int index) {
+              return pieChartList[index];
+            },
+          ),
         ),
       ),
+      //     SingleChildScrollView(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: <Widget>[
+      //       for (var element in widget.list)
+      //         PieChartList(
+      //           text: element,
+      //           index: widget.list.indexOf(element),
+      //         )
+      //     ],
+      //   ),
+      // ),
     );
   }
 }
@@ -59,9 +84,14 @@ class _PieChartList extends State<PieChartList> {
             ),
           ),
           SizedBox(
-            width: 20,
+            width: 10,
           ),
-          Text(widget.text),
+          Flexible(
+            child: Text(
+              widget.text,
+              overflow: TextOverflow.visible,
+            ),
+          ),
         ],
       ),
     );

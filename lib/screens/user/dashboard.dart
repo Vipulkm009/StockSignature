@@ -44,6 +44,21 @@ class _DashboardState extends State<Dashboard> {
     }
   }
 
+  List<DashboardCard> dashboardCardList = [
+    DashboardCard(
+      title: 'Categories',
+      list: kCategoryList,
+    ),
+    DashboardCard(
+      title: 'Sub-Categories',
+      list: kCategoryList[0].list,
+    ),
+    DashboardCard(
+      title: 'Product',
+      list: kCategoryList[0].list[0].list,
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,6 +67,7 @@ class _DashboardState extends State<Dashboard> {
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
               border: Border.symmetric(
                 horizontal: BorderSide(
                   width: 1.0,
@@ -59,7 +75,7 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(3.0),
+              padding: const EdgeInsets.all(5.0),
               child: Text(
                 'Dashboard>',
                 style: TextStyle(
@@ -68,19 +84,15 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              DashboardCard(
-                title: 'Product',
-                list: kCategoryList,
-              ),
-              DashboardCard(
-                title: 'Sub-Categories',
-                list: kCategoryList[0].list,
-              ),
-            ],
+          Expanded(
+            flex: 1,
+            child: ListView.builder(
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                itemCount: 3,
+                itemBuilder: (BuildContext context, int index) {
+                  return dashboardCardList[index];
+                }),
           ),
         ],
       ),

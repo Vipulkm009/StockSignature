@@ -29,7 +29,14 @@ class _ScreenScaffoldState extends State<ScreenScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stock Signature'),
+        // leading: Icon(
+        //   Icons.menu,
+        //   size: Theme.of(context).iconTheme.size,
+        // ),
+        title: Text(
+          'Stock Signature',
+          style: Theme.of(context).textTheme.title,
+        ),
         elevation: 12.0,
         actions: <Widget>[
           Switch(

@@ -3,12 +3,11 @@ import 'package:stock_signature/utilities/classes/subcategory.dart';
 
 class Product {
   String name;
-  Category category;
-  SubCategory subCategory;
+  // Category category;
+  // SubCategory subCategory;
   double price;
   String unit;
-  int count;
+  double sum;
 
-  // Product(this.name, this.subCategory, this.category, this.price, this.count,
-  //     this.unit);
+  Product(this.name, this.price, this.sum, this.unit);
 }

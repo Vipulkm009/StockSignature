@@ -28,40 +28,43 @@ class _DashboardCardState extends State<DashboardCard> {
         horizontal: 16.0,
         vertical: 8.0,
       ),
-      child: Card(
-        color: Theme.of(context).cardTheme.color,
-        elevation: 8.0,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Row(
-                  children: [
-                    Text(
-                      widget.title,
-                      style: Theme.of(context).textTheme.title,
+      child: Container(
+        // height: 300.0,
+        child: Card(
+          color: Theme.of(context).cardTheme.color,
+          elevation: 8.0,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        widget.title,
+                        style: Theme.of(context).textTheme.subtitle,
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  children: <Widget>[
+                    ListRow(
+                      list: getList(widget.list),
+                    ),
+                    PieChartView(
+                      list: widget.list,
                     ),
                   ],
-                ),
-              ),
-              Row(
-                children: <Widget>[
-                  ListRow(
-                    list: getList(widget.list),
-                  ),
-                  PieChartView(
-                    list: widget.list,
-                  ),
-                ],
-              )
-            ],
+                )
+              ],
+            ),
           ),
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(12.0)),
+          ),
         ),
       ),
     );
