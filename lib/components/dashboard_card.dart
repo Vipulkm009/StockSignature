@@ -29,28 +29,35 @@ class _DashboardCardState extends State<DashboardCard> {
         vertical: 8.0,
       ),
       child: Card(
-        color: Colors.black,
-        elevation: 8.0,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(12.0),
+        color: Theme.of(context).cardTheme.color,
+        elevation: 4.0,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Card(
+              color: Theme.of(context).cardTheme.color,
+              elevation: 2.0,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Row(
                   children: [
                     Text(
                       widget.title,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: Theme.of(context).textTheme.subtitle,
                     ),
                   ],
                 ),
               ),
-              Row(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(12.0),
+                  topRight: Radius.circular(12.0),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
                 children: <Widget>[
                   ListRow(
                     list: getList(widget.list),
@@ -59,12 +66,14 @@ class _DashboardCardState extends State<DashboardCard> {
                     list: widget.list,
                   ),
                 ],
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+          borderRadius: BorderRadius.all(
+            Radius.circular(12.0),
+          ),
         ),
       ),
     );

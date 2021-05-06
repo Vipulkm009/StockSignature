@@ -38,13 +38,14 @@ class _PieChartViewState extends State<PieChartView> {
           dataMap: dataMap,
           chartType: ChartType.ring,
           chartRadius: 125.0,
-          animationDuration: Duration(milliseconds: 100),
+          animationDuration: Duration(milliseconds: 1000),
           initialAngleInDegree: 270.0,
           colorList: kPieChartColors,
           legendOptions: LegendOptions(
             showLegends: false,
           ),
           chartValuesOptions: ChartValuesOptions(
+            decimalPlaces: 2,
             showChartValues: true,
             showChartValueBackground: true,
             showChartValuesInPercentage: true,
