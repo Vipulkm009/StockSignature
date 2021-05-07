@@ -83,6 +83,7 @@ class AppTheme {
     ),
     cardTheme: CardTheme(
       color: Colors.blueGrey[900],
+      shadowColor: Colors.blue[100],
     ),
     iconTheme: IconThemeData(
       color: Colors.cyan,
@@ -99,6 +100,10 @@ class AppTheme {
       display1: TextStyle(
         color: Colors.cyanAccent,
         fontSize: 14.0,
+      ),
+      display2: TextStyle(
+        color: Colors.cyanAccent,
+        fontSize: 11.0,
       ),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(

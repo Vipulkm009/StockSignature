@@ -5,5 +5,9 @@ class SubCategory {
   List<Product> list;
   double sum;
 
-  SubCategory(this.name, this.list, this.sum);
+  SubCategory(
+    this.name,
+    this.list,
+    this.sum,
+  );
 }

@@ -30,7 +30,7 @@ class _DashboardCardState extends State<DashboardCard> {
       ),
       child: Card(
         color: Theme.of(context).cardTheme.color,
-        elevation: 4.0,
+        elevation: 6.0,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -54,6 +54,7 @@ class _DashboardCardState extends State<DashboardCard> {
                   topRight: Radius.circular(12.0),
                 ),
               ),
+              shadowColor: Theme.of(context).appBarTheme.color,
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),

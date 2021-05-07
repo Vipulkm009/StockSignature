@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stock_signature/components/drawer_menu.dart';
+import 'package:stock_signature/screens/user/add_customer.dart';
 import 'package:stock_signature/screens/user/customer_screen.dart';
 import 'package:stock_signature/screens/user/dashboard.dart';
 import 'package:stock_signature/screens/user/product_screen.dart';
 import 'package:stock_signature/screens/user/report_screen.dart';
 import 'package:stock_signature/screens/user/vendor_screen.dart';
 import 'package:stock_signature/utilities/classes/app_state_notifiers.dart';
+import 'package:stock_signature/utilities/classes/customer.dart';
 import 'package:stock_signature/utilities/constants/global_constants.dart';
 
 class ScreenScaffold extends StatefulWidget {
@@ -27,6 +29,7 @@ class _ScreenScaffoldState extends State<ScreenScaffold> {
 
   @override
   Widget build(BuildContext context) {
+    final Customer customer = new Customer(null, null, null, null, null);
     return Scaffold(
       appBar: AppBar(
         // leading: Icon(
@@ -50,6 +53,16 @@ class _ScreenScaffoldState extends State<ScreenScaffold> {
       drawer: DrawerMenu(),
       body: _children[_currentIndex],
       floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AddCustomer(
+                customer: customer,
+              ),
+            ),
+          );
+        },
         child: Icon(
           Icons.add,
         ),

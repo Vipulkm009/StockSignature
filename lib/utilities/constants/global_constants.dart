@@ -19,12 +19,16 @@ var kCategoryList = [
             [
               Product(
                 'Glow n Lovely',
+                'Beauty Products',
+                'Cream',
                 50.0,
                 5.0,
                 'pieces',
               ),
               Product(
                 'Glow n Handsome',
+                'Beauty Products',
+                'Cream',
                 50.0,
                 7.0,
                 'pieces',
