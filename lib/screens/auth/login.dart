@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:stock_signature/components/app_body.dart';
 import 'package:stock_signature/components/rounded_button.dart';
+import 'package:stock_signature/components/screen_scaffold.dart';
 import 'package:stock_signature/screens/user/dashboard.dart';
 import 'package:stock_signature/utilities/constants/global_constants.dart';
 import 'package:stock_signature/services/auth_service.dart';
@@ -18,7 +19,7 @@ class _LoginState extends State<Login> {
   String password;
   @override
   Widget build(BuildContext context) {
-    return AppBody(
+    return Scaffold(
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -61,7 +62,7 @@ class _LoginState extends State<Login> {
                     final user = await _auth.signInWithEmailAndPassword(
                         email: email, password: password);
                     if (user != null)
-                      Navigator.pushNamed(context, Dashboard.id);
+                      Navigator.pushNamed(context, ScreenScaffold.id);
                   } catch (e) {
                     print(e);
                   }
@@ -71,7 +72,6 @@ class _LoginState extends State<Login> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomAppBar(),
     );
   }
 }

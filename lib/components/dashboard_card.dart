@@ -50,8 +50,8 @@ class _DashboardCardState extends State<DashboardCard> {
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(12.0),
-                  topRight: Radius.circular(12.0),
+                  topLeft: Radius.circular(20.0),
+                  topRight: Radius.circular(20.0),
                 ),
               ),
               shadowColor: Theme.of(context).appBarTheme.color,
@@ -73,7 +73,7 @@ class _DashboardCardState extends State<DashboardCard> {
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(12.0),
+            Radius.circular(20.0),
           ),
         ),
       ),

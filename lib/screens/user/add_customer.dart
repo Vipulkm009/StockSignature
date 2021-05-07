@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stock_signature/screens/user/customer_screen.dart';
 import 'package:stock_signature/utilities/classes/customer.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AddCustomer extends StatefulWidget {
   // const AddCustomer({Key key}) : super(key: key);
@@ -13,6 +14,7 @@ class AddCustomer extends StatefulWidget {
 }
 
 class _AddCustomerState extends State<AddCustomer> {
+  final db = FirebaseFirestore.instance;
   @override
   Widget build(BuildContext context) {
     TextEditingController _nameController = new TextEditingController();
@@ -131,18 +133,17 @@ class _AddCustomerState extends State<AddCustomer> {
                     child: Text(
                       'Continue',
                     ),
-                    onPressed: () {
+                    onPressed: () async {
                       widget.customer.name = _nameController.text;
                       widget.customer.companyName = _companyNameController.text;
                       widget.customer.address = _addressController.text;
                       widget.customer.mobileNo =
-                          (_mobileNoController.text as int);
+                          int.parse(_mobileNoController.text);
                       widget.customer.emailID = _emailIDController.text;
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => CustomerScreen()),
-                      );
+                      await db
+                          .collection('customer')
+                          .add(widget.customer.toJson());
+                      Navigator.of(context).popUntil((route) => route.isFirst);
                     },
                   ),
                 ],

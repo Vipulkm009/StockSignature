@@ -12,4 +12,12 @@ class Customer {
     this.mobileNo,
     this.emailID,
   );
+
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'company_name': companyName,
+        'address': address,
+        'mobile_no': mobileNo,
+        'email_id': emailID,
+      };
 }
